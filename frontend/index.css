@@ -1,0 +1,44 @@
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.chart-container {
+    position: relative;
+    flex-grow: 2;
+    min-height: 0;
+    display: flex;
+}
+.app-container {
+    min-height: 0;
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.container {
+    padding: 5px 0px 5px 0px;
+    max-width: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+@media only screen and (max-width: 640px) {
+    .container {
+        max-width: none;
+        overflow: auto;
+    }
+}
+.controlls {
+    flex-grow: 1;
+    flex-direction: column;
+    display: flex;
+    border-style: none none none solid;
+    border-width: 1px;
+    border-color: black;
+    padding-left: 2px;
+}

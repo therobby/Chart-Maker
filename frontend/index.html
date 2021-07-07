@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Charts Maker</title>
+        <link rel="stylesheet" href="./index.css" />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./chartjs/Chart.min.css" />
+        <link rel="stylesheet" href="./milligram-1.4.1/milligram.min.css" />
+        <script>
+            if (typeof module === "object") {
+                window.module = module;
+                module = undefined;
+            }
+        </script>
+        <script src="./jquery/jquery-3.5.1.min.js"></script>
+        <script src="./jquery/jquery-csv.min.js"></script>
+        <script src="./chartjs/Chart.min.js" defer></script>
+        <script src="./index.js" defer></script>
+        <script src="./controls.js" defer></script>
+        <script src="./charts/bar.js" defer></script>
+        <script src="./charts/horizontalbar.js" defer></script>
+        <script src="./charts/line.js" defer></script>
+        <script src="./charts/radar.js" defer></script>
+        <script src="./charts/pie.js" defer></script>
+        <script src="./charts/polararea.js" defer></script>
+        <script defer>
+            if (window.module) module = window.module;
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            Select chart:
+            <div id="nav-buttons" class="row">
+                <div class="column">
+                    <button
+                        id="bar-button"
+                        onclick="barChartSelected(this)"
+                        class="button"
+                    >
+                        Box
+                    </button>
+                </div>
+                <div class="column">
+                    <button
+                        id="bar-button"
+                        onclick="horizontalBarChartSelected(this)"
+                        class="button"
+                    >
+                        Horizontal Box
+                    </button>
+                </div>
+                <div class="column">
+                    <button
+                        onclick="lineChartSelected(this)"
+                        class="button button-outline"
+                    >
+                        Line
+                    </button>
+                </div>
+                <div class="column">
+                    <button
+                        onclick="radarChartSelected(this)"
+                        class="button button-outline"
+                    >
+                        Radar
+                    </button>
+                </div>
+                <div class="column">
+                    <button
+                        onclick="pieChartSelected(this)"
+                        class="button button-outline"
+                    >
+                        Pie
+                    </button>
+                </div>
+                <div class="column">
+                    <button
+                        onclick="polarAreaChartSelected(this)"
+                        class="button button-outline"
+                    >
+                        Polar Area
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="app-container" class="app-container">
+            <div id="chart-container-bar" class="chart-container">
+                <canvas id="barChart"></canvas>
+            </div>
+            <div id="chart-container-horizontal-bar" class="chart-container">
+                <canvas id="horizontalBarChart"></canvas>
+            </div>
+            <div id="chart-container-line" class="chart-container">
+                <canvas id="lineChart"></canvas>
+            </div>
+            <div id="chart-container-radar" class="chart-container">
+                <canvas id="radarChart"></canvas>
+            </div>
+            <div id="chart-container-pie" class="chart-container">
+                <canvas id="pieChart"></canvas>
+            </div>
+            <div id="chart-container-polar-area" class="chart-container">
+                <canvas id="polarAreaChart"></canvas>
+            </div>
+            <div id="controlls" class="controlls">
+                <button class="button" onclick="downloadCurrentChart()">
+                    Save chart as image
+                </button>
+                <button class="button button-outline" onclick="loadCSVData()">
+                    Load data
+                </button>
+            </div>
+        </div>
+    </body>
+</html>
